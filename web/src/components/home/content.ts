@@ -102,10 +102,8 @@ export const GOOD_FIRST_ISSUES = [
 
 export const SELF_HOST_CHECKLIST = [
   "Every pillar ships: uptime, RUM, metrics, logs, traces, dashboards, alerts, SLOs, status pages",
-  // Current-system truth: the compose stack runs on MongoDB (architecture.md);
-  // the ratified ClickHouse telemetry store (decisions.md U-1) lands with
-  // OBS-001 and stays out of shipping claims until it ships.
-  "MongoDB ships in the box — one datastore, nothing else to stand up",
+  // Stores match what docker-compose.yml actually starts.
+ "Postgres, ClickHouse, Kafka and Valkey ship in the box",
   "Helm chart for Kubernetes when you outgrow compose",
 ];
 
@@ -126,8 +124,7 @@ export const SELF_HOST_SNIPPET_TABS: CodeSnippetTab[] = [
 /** A14 — shared muted caption under the snippet, visible in both tab
  *  states (user-approved copy). */
 export const SELF_HOST_CAPTION =
-  "Compose ships MongoDB; the Helm chart expects yours (MONGO_URI). All 8 pillars come up on :3000.";
-
+ "Compose ships Postgres, ClickHouse, Kafka and Valkey. All 8 pillars come up on :3000.";
 export const ARCHITECTURE_FLOW = [
   "OTel SDK / collector",
   "ingest-gw :4317/:4318",
